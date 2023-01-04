@@ -95,6 +95,48 @@ function toggle_cities(event) {
 // WRITE SPECIFICATION
 // ATTENTION: You need to write the specification of all three functions:
 //            create_countries_cities_filters, create_country and create_city
+//create_countries_cities_filters
+/*
+  ARGUMENTS
+    This function does not take any arguments 
+
+  SIDE EFFECTS
+    Creates filter for all countries and which cities belong to which country.
+
+  NO RETURN VALUE
+*/
+//create_country
+/*
+  ARGUMENTS
+    country: an object from the array: COUNTRIES, that contain the following keys:
+      id: (a number value) the country´s id.
+      name: (string) The country´s name.
+    No control of arguments
+
+  SIDE EFFECTS
+    Creates a new dom_element for a country. Appends it accordingly and gives it text-content and a class for the CSS.
+    Then the function filters every city that has a "country" ID that matches with the country.
+    Then it calls on the function create_city for each object in the array where the cities have been filtered.
+
+    NO RETURN VALUE
+*/
+//create_cities
+/*
+  ARGUMENTS
+    city: an object from the array CITIES that contain the following keys:
+      id: (a number value) the city´s id.
+      name: (string) the city´s name.
+      countryID: (a number value) the id of the country where the city is located. 
+    No control of arguments
+
+  SIDE EFFECTS
+    Creates a new dom_element for a city. Appends it inside the newly created country dom_element and gives it a class so
+    it will be selected by default.
+    Also gives text-content and stores the city ID in the attribute dataset belonging to the dom_element.
+
+  NO RETURN VALUE
+*/
+
 function create_countries_cities_filters() {
   function create_country(country) {
     const dom = document.createElement("div");
