@@ -24,27 +24,40 @@ function click_filter_element(event) {
 
 // G
 // CODE according to specification
+
+
+/*
+  ARGUMENTS
+    data: object that contains the following keys:
+      class (string): a class-name given to the created element
+      textContent (string): the text that the element contains
+      parent (reference to HTML-element): the HTML-element that is the parent of the created element
+
+    No control of arguments.
+
+  SIDE-EFFECTS
+    Creates a new dom-element with the tag "li".
+    Gives the new dom-element the class contained in data.class
+    Appends the new dom-element to the element referenced in data.parent
+    Sets the text content of the new dom-element to data.textContent
+    Sets the function click_filter_element as a listener to "click" for the new dom-element
+
+  RETURN VALUE
+    Returns a reference to the new dom-element
+*/
+
 function create_filter_element(data) {
+  parent = data.parent
+  klass = data.class
+  textContent = data.textContent
 
-  /*
-    ARGUMENTS
-      data: object that contains the following keys:
-        class (string): a class-name given to the created element
-        textContent (string): the text that the element contains
-        parent (reference to HTML-element): the HTML-element that is the parent of the created element
+  const dom = document.createElement("li");
+  dom.classList.add(klass);
+  dom.textContent = textContent;
+  dom.addEventListener("click", click_filter_element)
+  parent.append(dom)
 
-      No control of arguments.
-
-    SIDE-EFFECTS
-      Creates a new dom-element with the tag "li".
-      Gives the new dom-element the class contained in data.class
-      Appends the new dom-element to the element referenced in data.parent
-      Sets the text content of the new dom-element to data.textContent
-      Sets the function click_filter_element as a listener to "click" for the new dom-element
-
-    RETURN VALUE
-      Returns a reference to the new dom-element
-  */
+  return dom
 
 }
 
