@@ -108,7 +108,8 @@ function toggle_cities(event) {
 // WRITE SPECIFICATION
 // ATTENTION: You need to write the specification of all three functions:
 //            create_countries_cities_filters, create_country and create_city
-//create_countries_cities_filters
+
+//1. create_countries_cities_filters
 /*
   ARGUMENTS
     This function does not take any arguments 
@@ -118,7 +119,8 @@ function toggle_cities(event) {
 
   NO RETURN VALUE
 */
-//create_country
+
+//2. create_country
 /*
   ARGUMENTS
     country: an object from the array: COUNTRIES, that contain the following keys:
@@ -133,7 +135,8 @@ function toggle_cities(event) {
 
     NO RETURN VALUE
 */
-//create_cities
+
+//3. create_cities
 /*
   ARGUMENTS
     city: an object from the array CITIES that contain the following keys:
