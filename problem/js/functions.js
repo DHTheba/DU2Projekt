@@ -2,6 +2,7 @@
 // G
 // CODE According to specification
 function click_filter_element(event) {
+  event.target.classList.toggle("selected");
 
   /*
     ARGUMENTS
@@ -54,10 +55,10 @@ function create_filter_element(data) {
   const dom = document.createElement("li");
   dom.classList.add(klass);
   dom.textContent = textContent;
-  dom.addEventListener("click", click_filter_element)
-  parent.append(dom)
+  dom.addEventListener("click", click_filter_element);
+  parent.append(dom);
 
-  return dom
+  return dom;
 
 }
 
