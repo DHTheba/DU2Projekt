@@ -211,7 +211,17 @@ function create_language_filter() {
   }
   array_each(LANGUAGES, create_element);
 }
+function create_levels_subjects_languages_filters(type, array) {
+  function create(object) {
+    const dom = create_filter_element({
+      parent: document.querySelector(`#${type}_filter > ul`),
+      class: "selected",
+      textContent: object.name,
+    });
+  }
 
+  array_each(array, create(type));
+}
 
 // G / VG (see details in specification)
 // CODE according to specifications
