@@ -348,6 +348,24 @@ function update_programmes() {
 
 // Optional VG: Which parts of the function's code could be abstracted?
 //              Implement it
+
+//FUNCTION SPECIFICATION for read_filters
+/*
+ARGUMENTS
+  This function doesn't take any arguments.
+
+SIDE-EFFECTS
+  Function checks which filter_elements are selected.
+  It then filters it in order of cities, which universities are in the selected cities,
+  then the programmes available in selected universities, and last what level, language and subjects the programmes have.
+
+  The function then checks if the search string is NOT empty
+    If the search field is NOT empty then the programmes are filtered and all programmes with matching words in their name are shown.
+    However if the search field IS empty then nothing happens and this part of the function is ignored.  
+
+RETURN
+  Returns an array of all programmes which matched the selected filters.
+*/
 function read_filters() {
 
   const city_selected_dom = document.querySelectorAll("#country_filter li.selected");
