@@ -3,7 +3,7 @@
 // CODE According to specification
 function click_filter_element(event) {
   event.target.classList.toggle("selected");
-
+  update_programmes();
   /*
     ARGUMENTS
       event: event-object created when user clicks on one of the filter elements.
@@ -308,7 +308,7 @@ function create_programme(programme) {
   */
 
 }
-array_each(PROGRAMMES, create_programme);
+// array_each(PROGRAMMES, create_programme);
 
 // G
 // CODE according to the specification
@@ -327,7 +327,17 @@ function update_programmes() {
       NO RETURN VALUE
 
   */
+  const programmes_container = document.querySelector("#programmes > ul");
+  const programmes_para = document.querySelector("p");
+  programmes_container.innerHTML = "";
 
+  const correct_programmes = read_filters();
+  array_each(correct_programmes, create_programme);
+  if (correct_programmes.length > 0) {
+    programmes_para.textContent = ""
+  } else if (correct_programmes.length === 0) {
+    programmes_para.textContent = "Inga program uppfyller nuvarande filter."
+  }
 }
 
 
