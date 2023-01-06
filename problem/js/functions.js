@@ -254,6 +254,29 @@ function create_levels_subjects_languages_filters(type, array) {
 // G / VG (see details in specification)
 // CODE according to specifications
 function create_programme(programme) {
+  const programme_uniID = programme.universityID;
+  const programme_cityID = UNIVERSITIES[programme_uniID].cityID;
+  const programme_countryID = CITIES[programme_cityID].countryID;
+  const programme_levelID = programme.levelID - 1;
+  const programme_subjectID = programme.subjectID;
+  const programme_languageID = programme.languageID;
+
+
+  let new_programme_dom = document.createElement("div");
+  new_programme_dom.classList.add("programme");
+  new_programme_dom.setAttribute("id", `programme${programme.id}`);
+
+
+  new_programme_dom.innerHTML = `
+    <div class ="top">
+      <h2>${programme.name}</h2>
+      <p>${UNIVERSITIES[programme_uniID].name}</p>
+      <p>${CITIES[programme_cityID].name}, ${COUNTRIES[programme_countryID].name}</p> 
+      <p>${LEVELS[programme_levelID].name}, ${SUBJECTS[programme_subjectID].name}, ${LANGUAGES[programme_languageID].name}</p>
+    </div>`
+
+
+  document.querySelector("#programmes >ul").append(new_programme_dom);
 
   /*
 
@@ -277,7 +300,7 @@ function create_programme(programme) {
   */
 
 }
-
+array_each(PROGRAMMES, create_programme);
 
 // G
 // CODE according to the specification
