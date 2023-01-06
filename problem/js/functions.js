@@ -276,6 +276,14 @@ function create_programme(programme) {
     </div>`
 
 
+  const all_city_pictures = CITIES[programme_cityID].imagesNormal.length;
+  const city_name = CITIES[programme_cityID].name.toLocaleLowerCase();
+  const random = get_random_number(all_city_pictures, 1);
+  const normal_jpg = `_normal_${random}.jpg`;
+
+
+  new_programme_dom.style.backgroundImage = `url(./media/geo_images/${city_name}${normal_jpg})`;
+
   document.querySelector("#programmes >ul").append(new_programme_dom);
 
   /*
