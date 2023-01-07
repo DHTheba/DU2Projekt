@@ -86,14 +86,17 @@ body {}
 
 #top_images div:nth-child(1) {
   background-image: url("../media/geo_images/mexico_normal_6.jpg");
+  background-position: center;
 }
 
 #top_images div:nth-child(2) {
   background-image: url("../media/geo_images/sweden_normal_5.jpg");
+  background-position: center;
 }
 
 #top_images div:nth-child(3) {
   background-image: url("../media/geo_images/sidney_normal_2.jpg");
+  background-position: center;
 }
 
 #top_images>* {

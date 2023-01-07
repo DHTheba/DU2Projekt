@@ -231,20 +231,29 @@ function create_language_filter() {
 //Specification for abstracted function
 /*
   ARGUMENT
-    
-
+  Recieves two arguments
+  An Array which contains the objects of relevant information to the filter type (levels, subjects or languages)
+  A Type which is the name of the category which the filter should represent.
+  
   SIDE-EFFECTS
+  Creates an LI element for each object in the array using the "create_filter_element" function
+  inside of the "create" function.
+  The LI is then appended to the "type" parent
+  The LI textContent is set to the objects name key
+  The LI dataset ID is set to the objects ID key
+  Uses array_each to filter through Languge, Subjects and Levels depending on what is called in the function call (in index.js)
+  
+  NO RETURN VALUE
 */
-
-function create_levels_subjects_languages_filters(type, array) {
+//Abstracted function below
+function create_levels_subjects_languages_filters(array, type) {
   function create(object) {
     const dom = create_filter_element({
       parent: document.querySelector(`#${type}_filter > ul`),
       class: "selected",
       textContent: object.name,
     });
-    //testing if line below should be in or not. W.I.P.
-    dom.dataset.id = object.id
+    dom.dataset.id = object.id;
   }
 
   array_each(array, create(type));
